@@ -3,13 +3,17 @@
 关于CentOS 7系统：需要删除firewalld装回iptables.
 # 安装命令(已默认安装)：
 systemctl stop firewalld.service
+
 systemctl disable firewalld.service
+
 yum install iptables-services -y
+
 systemctl enable iptables.service
  
 第一步：开启系统的转发功能
 首先，先确认服务器是否已开启转发，运行：
 sysctl net.ipv4.ip_forward
+
 # 如果已经启动则显示
 net.ipv4.ip_forward = 1
 
